@@ -2,7 +2,7 @@
 const linkedList = () => {};
 
 // Factory for node
-const node = (value, nextNode) => {
+const node = (value = null, nextNode = null) => {
   return {
     value,
     nextNode,
