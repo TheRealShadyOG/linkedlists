@@ -99,6 +99,20 @@ const linkedList = () => {
     return false;
   };
 
+  // Return index of node containing value, null if not found
+  const find = (value) => {
+    let current = head;
+    // Loop over list
+    for (let i = 0; i < size; i++) {
+      if (current.value === value) {
+        return i;
+      } else {
+        current = current.next;
+      }
+    }
+    return null;
+  };
+
   return {
     append,
     prepend,
@@ -108,6 +122,7 @@ const linkedList = () => {
     atIndex,
     pop,
     contains,
+    find,
   };
 };
 
