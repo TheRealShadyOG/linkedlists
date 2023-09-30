@@ -113,6 +113,19 @@ const linkedList = () => {
     return null;
   };
 
+  // Represent linkedList object as a string
+  const toString = () => {
+    let current = head;
+    let string = '';
+    // Loop over list
+    for (let i = 0; i < size; i++) {
+      string += `( ${current.value} ) -> `;
+      current = current.next;
+    }
+    string += 'null';
+    return string;
+  };
+
   return {
     append,
     prepend,
@@ -123,6 +136,7 @@ const linkedList = () => {
     pop,
     contains,
     find,
+    toString,
   };
 };
 
