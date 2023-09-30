@@ -1,6 +1,7 @@
 // Factory for link lists
 const linkedList = () => {
   let head = null;
+  let listSize = 0;
 
   // Function to add new node to end of list
   const append = (value) => {
@@ -19,6 +20,8 @@ const linkedList = () => {
       // Append node to last place
       current.next = newNode;
     }
+    // Increase list size by 1
+    listSize += 1;
   };
 
   // Function to add new node to start of list
@@ -28,11 +31,19 @@ const linkedList = () => {
     // Replace head with new node
     newNode.next = head;
     head = newNode;
+    // Increase list size by 1
+    listSize += 1;
+  };
+
+  // Show size of list
+  const size = () => {
+    console.log(listSize);
   };
 
   return {
     append,
     prepend,
+    size,
   };
 };
 
