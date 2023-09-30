@@ -151,9 +151,33 @@ const linkedList = () => {
       previous.next = newNode;
       newNode.next = current;
     }
-
     // Increase list size by 1
     size += 1;
+  };
+
+  // Removes node at given index
+  const removeAt = (index) => {
+    let current = head;
+    // Error if invalid index
+    if (index < 0 || index > size - 1) {
+      console.log('Invalid Index');
+      return;
+    }
+    // If index is 0 replace head with next node
+    if (index === 0) {
+      head = current.next;
+    } else {
+      // Loop over list until at index
+      let previous;
+      for (let i = 0; i < index; i++) {
+        previous = current;
+        current = current.next;
+      }
+      // Previous.next becomes node after index
+      previous.next = current.next;
+    }
+    // Decrease list size by 1
+    size -= 1;
   };
 
   return {
@@ -168,6 +192,7 @@ const linkedList = () => {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 };
 
