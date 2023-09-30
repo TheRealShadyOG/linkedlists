@@ -40,10 +40,16 @@ const linkedList = () => {
     console.log(size);
   };
 
+  // Show head of list
+  const getHead = () => {
+    console.log(head);
+  };
+
   return {
     append,
     prepend,
     getSize,
+    getHead,
   };
 };
 
