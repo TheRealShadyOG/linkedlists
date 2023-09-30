@@ -85,6 +85,20 @@ const linkedList = () => {
     size -= 1;
   };
 
+  // Return true if list has value passed otherwise false
+  const contains = (value) => {
+    let current = head;
+    // Loop over list
+    for (let i = 0; i < size; i++) {
+      if (current.value === value) {
+        return true;
+      } else {
+        current = current.next;
+      }
+    }
+    return false;
+  };
+
   return {
     append,
     prepend,
@@ -93,6 +107,7 @@ const linkedList = () => {
     getTail,
     atIndex,
     pop,
+    contains,
   };
 };
 
