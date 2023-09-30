@@ -35,14 +35,28 @@ const linkedList = () => {
     size += 1;
   };
 
-  // Show size of list
+  // Return size of list
   const getSize = () => {
     return size;
   };
 
-  // Show head of list
+  // Return head of list
   const getHead = () => {
     return head;
+  };
+
+  // Return tail of list
+  const getTail = () => {
+    // Variables for tail and current node
+    let tail;
+    let current = head;
+    // Loop over list
+    while (current.next) {
+      // Replace tail with next node in list
+      tail = current.next;
+      current = current.next;
+    }
+    return tail;
   };
 
   return {
@@ -50,6 +64,7 @@ const linkedList = () => {
     prepend,
     getSize,
     getHead,
+    getTail,
   };
 };
 
