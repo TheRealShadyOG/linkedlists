@@ -126,6 +126,36 @@ const linkedList = () => {
     return string;
   };
 
+  // Insert new node at given index
+  const insertAt = (value, index) => {
+    // Create new node
+    const newNode = node(value);
+    let current = head;
+    // Error if invalid index
+    if (index < 0 || index > size - 1) {
+      console.log('Invalid Index');
+      return;
+    }
+    // If index === 0 replace head with new node
+    if (index === 0) {
+      newNode.next = head;
+      head = newNode;
+    } else {
+      // Loop over list until at index
+      let previous;
+      for (let i = 0; i < index; i++) {
+        previous = current;
+        current = current.next;
+      }
+      // Previous.next becomes newNode, newNode.next becomes current at index
+      previous.next = newNode;
+      newNode.next = current;
+    }
+
+    // Increase list size by 1
+    size += 1;
+  };
+
   return {
     append,
     prepend,
@@ -137,6 +167,7 @@ const linkedList = () => {
     contains,
     find,
     toString,
+    insertAt,
   };
 };
 
