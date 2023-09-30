@@ -59,12 +59,26 @@ const linkedList = () => {
     return tail;
   };
 
+  // Return node at given index
+  const atIndex = (index) => {
+    let current = head;
+    if (index < 0 || index > size - 1) {
+      console.log('Invalid Index');
+      return;
+    }
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+    return current;
+  };
+
   return {
     append,
     prepend,
     getSize,
     getHead,
     getTail,
+    atIndex,
   };
 };
 
