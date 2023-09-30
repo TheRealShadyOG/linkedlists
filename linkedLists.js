@@ -37,12 +37,12 @@ const linkedList = () => {
 
   // Show size of list
   const getSize = () => {
-    console.log(size);
+    return size;
   };
 
   // Show head of list
   const getHead = () => {
-    console.log(head);
+    return head;
   };
 
   return {
