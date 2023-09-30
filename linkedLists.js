@@ -72,6 +72,19 @@ const linkedList = () => {
     return current;
   };
 
+  // Remove last element from list
+  const pop = () => {
+    let current = head;
+    // Loop until at second to last item
+    while (current.next.next) {
+      current = current.next;
+    }
+    // Erase last item in list
+    current.next = null;
+    // Reduce size by 1
+    size -= 1;
+  };
+
   return {
     append,
     prepend,
@@ -79,6 +92,7 @@ const linkedList = () => {
     getHead,
     getTail,
     atIndex,
+    pop,
   };
 };
 
